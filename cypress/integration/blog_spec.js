@@ -1,7 +1,11 @@
 describe('Page Test', () => {
     it('Visits the Academy Blog', () => {
-        cy.request({url: 'http://localhost:3000/', failOnStatusCode: false})
-        cy.visit('http://localhost:3000/')
-
+        cy.visit({
+            method:'GET',
+            url:'/',
+            failOnStatusCode: false
+          })
+        cy.get('h1').contains('Views From The Academy')
     })
 })
+
