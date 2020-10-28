@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     final String url = "https://academy-project-blogs.s3-eu-west-1.amazonaws.com/teaching_code.doc"
-                    final String response = sh(script: "curl -s -o /public/teaching2.doc $url", returnStdout: true).trim()
+                    final String response = sh(script: "curl -s -o public/teaching2.doc $url", returnStdout: true).trim()
                     echo response
                 }
                 script {
