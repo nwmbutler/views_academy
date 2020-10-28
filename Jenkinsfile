@@ -27,7 +27,7 @@ pipeline {
         } 
         stage("run tests") {
             steps {
-            sh 'npm start'
+            sh 'npm start & wait-on http://localhost:3000'
             sh 'run test'
             echo 'TESTING'
             }
