@@ -1,4 +1,7 @@
 describe('Page Test', () => {
+  beforeEach(() => {
+    cy.wait(300);
+  })
     it('Visits the Academy Blog', () => {
         cy.visit({
             method:'GET',
@@ -14,10 +17,7 @@ describe('Page Test', () => {
             url:'/',
             failOnStatusCode: false
           })
-
-        cy.get(':nth-child(2) > .card > .card-body > .card-text').contains('Some quick example')
-        cy.get(':nth-child(3) > .card > .card-body > .card-text').contains('Some quick example')
-        cy.get(':nth-child(4) > .card > .card-body > .card-text').contains('Some quick example')
+          cy.get(':nth-child(1) > .card-body > .card-subtitle').contains('Academy blog')
     })
 })
 
