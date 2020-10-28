@@ -25,5 +25,10 @@ pipeline {
                 }
             }
         } 
+        stage("run tests") {
+            sh 'npm start'
+            sh 'run test'
+            echo 'TESTING'
+        } 
     }   
 }
