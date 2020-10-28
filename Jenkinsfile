@@ -3,12 +3,10 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs "Node-Views"
-    }
+    tools {nodejs "Node-Views"}
 
     stages {
-        stage("Using curl example") {
+         stage("Using curl example") {
             steps {
                 script {
                     final String url = "https://academy-project-blogs.s3-eu-west-1.amazonaws.com/teaching_code.doc"
@@ -26,9 +24,6 @@ pipeline {
                     echo response
                 }
             }
-            steps {
-                sh 'npm run test'
-            } 
-        }
+        } 
     }   
 }
