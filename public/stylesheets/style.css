@@ -7,11 +7,19 @@ a {
   color: #00B7FF;
 }
 
-.title {
-  margin: 0 auto; 
+Title {
+  color: green;
+  margin: auto; 
   width: 500px;
 }
 
 .blogblock {
   text-align: center;
+}
+
+.card-text{
+  font-size:19px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
