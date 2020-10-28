@@ -7,14 +7,16 @@ a {
   color: #00B7FF;
 }
 
-Title {
+.Title {
   color: green;
   margin: auto; 
   width: 500px;
 }
 
 .blogblock {
+  margin: auto;
   text-align: center;
+  padding: 50px;
 }
 
 .card-text{
