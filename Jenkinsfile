@@ -25,12 +25,16 @@ pipeline {
                 }
             }
         } 
-        stage("run tests") {
+         stage('Install dependencies') {
             steps {
-            sh 'npm start & wait-on http://localhost:3000'
-            sh 'run test'
-            echo 'TESTING'
+                sh 'npm install'
+            } 
+         }
+     
+         stage('Test') {
+            steps {
+                sh 'npm test'
             }
-        } 
+         }      
     }   
 }
