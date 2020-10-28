@@ -26,9 +26,11 @@ pipeline {
             }
         } 
         stage("run tests") {
+            steps {
             sh 'npm start'
             sh 'run test'
             echo 'TESTING'
+            }
         } 
     }   
 }
