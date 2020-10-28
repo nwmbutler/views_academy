@@ -1,15 +1,12 @@
 @Library('jenkins_shared') _
 
-node {
-    env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-    sh 'npm --version'
-    stage('Preparation') { 
-       }
-}
-
 pipeline {
     agent any
+
+    tools {
+        nodejs "Node-Views"
+    }
+
     stages {
          stage("Using curl example") {
             steps {
@@ -29,6 +26,10 @@ pipeline {
                     echo response
                 }
             }
+        } stage("Integration Tests") {
+            steps {
+                sh 'npm run test'
+            }
         }
-    }
+    }   
 }
