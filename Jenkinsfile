@@ -44,6 +44,11 @@ pipeline {
                     }
                 }
             }
-        }     
+        } 
+        stage('Killall'){
+            steps{
+                sh 'killall node'
+            }
+        }    
     }
 }    
