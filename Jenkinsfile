@@ -32,23 +32,12 @@ pipeline {
          }
 
          stage('Run Tests'){
-             parallel{
-                 stage('Run'){
-                    steps{
-                        sh 'node bin/www' 
-                    }
-                 }
                 stage('Test') {
                     steps {
-                        sh 'npx cypress run --headless'
+                        sh 'npm test'
                     }
                 }
-            }
+            
         } 
-        stage('Killall'){
-            steps{
-                sh 'killall node'
-            }
-        }    
     }
 }    
