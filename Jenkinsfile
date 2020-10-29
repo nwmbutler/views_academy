@@ -30,6 +30,12 @@ pipeline {
                 sh 'npm install'
             } 
          }
+
+         stage('Run'){
+             steps{
+                sh 'node bin/www'
+             }
+         }
      
          stage('Test') {
             steps {
