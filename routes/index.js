@@ -13,4 +13,16 @@ fetch('https://academy-project-blogs.s3-eu-west-1.amazonaws.com/milestones.txt')
   res.body.pipe(dest);
 });
 
+fetch('https://academy-project-blogs.s3-eu-west-1.amazonaws.com/teaching_code.doc')
+.then(res => {
+  const dest = fs.createWriteStream('./public/teaching.txt');
+  res.body.pipe(dest);
+});
+
+fetch('https://academy-project-blogs.s3-eu-west-1.amazonaws.com/IDC.md')
+.then(res => {
+  const dest = fs.createWriteStream('./public/idc.txt');
+  res.body.pipe(dest);
+});
+
 module.exports = router;
