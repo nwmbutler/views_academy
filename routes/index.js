@@ -1,8 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+const fetch = require('node-fetch');
 
 router.get('/', function(res, next) {
   res.render('main', { layout: 'main'});
+});
+
+fetch('https://academy-project-blogs.s3-eu-west-1.amazonaws.com/milestones.txt')
+.then(res => {
+  const dest = fs.createWriteStream('./public/milestones.txt');
+  res.body.pipe(dest);
 });
 
 module.exports = router;
