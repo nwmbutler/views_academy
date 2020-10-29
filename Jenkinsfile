@@ -6,6 +6,7 @@ pipeline {
     tools {nodejs "Node-Views"}
 
     stages {
+        wrap([$class: 'Xvfb']) {
          stage("Using curl example") {
             steps {
                 script {
@@ -35,6 +36,7 @@ pipeline {
             steps {
                 sh 'npx cypress run --headless'
             }
-         }      
+         }
+        }      
     }   
 }
