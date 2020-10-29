@@ -33,7 +33,7 @@ pipeline {
      
          stage('Test') {
             steps {
-                sh 'npm run cypress'
+                sh 'npx cypress run --headless'
             }
          }      
     }   
