@@ -35,6 +35,11 @@ pipeline {
                     steps {
                         sh 'npm test'
                     }
-        } 
+        }
+        stage('Linting') {
+                    steps {
+                        sh 'npx eslint'
+                    }
+        }  
     }
 }    
