@@ -39,6 +39,7 @@ pipeline {
         stage('Linting') {
                     steps {
                         sh 'npx eslint'
+                        echo "Linting Complete"
                     }
         }  
     }
