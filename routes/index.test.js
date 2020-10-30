@@ -4,4 +4,4 @@
 // jest.mock('node-fetch', () => require('fetch-mock-jest').sandbox());
 // const fetchMock = require('node-fetch')
 
-const router = require('./index')
+const index = require('./index')
